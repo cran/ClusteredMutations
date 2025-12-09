@@ -17,11 +17,12 @@
 
 \title{\textbf{\emph{ClusteredMutations}: Looking for a (Mutation) Shower. \\}}
 \author{\textbf{David Lora}\\
-\small{Clinical Research Unit (imas12)}\\
+\small{Faculty of Statistical Studies}\\
+\small{Universidad Complutense de Madrid (UCM)}\\
+\small{Research Institute Hospital 12 de Octubre (imas12)}\\
 \small{Hospital Universitario 12 de Octubre}\\
-\small{CIBER de Epidemiolog\'ia y Salud P\'ublica (CIBERESP)}\\
 \small{Madrid, Spain}\\
-\small{E-mail: \texttt{david@h12o.es}}
+\small{E-mail: \texttt{dalora@ucm.es}}
 }
 
 \maketitle

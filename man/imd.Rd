@@ -36,6 +36,7 @@ David Lora
 \code{\link{plot}}
 }
 \examples{
+require(ggplot2)
 
 data(PD4107a)
 
@@ -66,15 +67,15 @@ axis(2, at=c(0,1,2,3,4,6), labels=c("1","10","100","1000","10000","1000000"),
 	las=2, cex.axis=0.6)
 
 ###Rainfall plot for PD4107a cancer sample (Nik-Zainal et al. 2012);
-#require(ggplot2)
-#graph <- qplot(data=rainfall,number,log10distance,colour=extra, ylim=c(0.2,8), 
-#	ylab="log10", xlab="PD4107a")
-#graph <- graph + 
-#	scale_colour_manual(values =c("T>C"="yellow","T>G"="green","T>A"="pink",
-#		"C>T"="red","C>G"="black","C>A"="blue"))
-#graph <- graph + theme(legend.title=element_blank())
-#graph <- graph + scale_y_continuous(breaks = c(0, 1, 2, 3, 4, 6),
-#		labels=c("1","10","100","1000","10000","1000000"))
-#graph
+graph <- ggplot(data=rainfall,
+            mapping=(aes(x=number,y=log10distance,colour=extra))) +
+            geom_point() + 
+	          scale_colour_manual(values =c("T>C"="yellow","T>G"="green",
+	                "T>A"="pink","C>T"="red","C>G"="black","C>A"="blue")) + 
+	          theme(legend.title=element_blank()) + 
+	          ylab("log10") + xlab("PD4107a") +
+	          scale_y_continuous(breaks = c(0, 1, 2, 3, 4, 6),
+	                labels=c("1","10","100","1000","10000","1000000"))
+graph
 }
 \keyword{kataegis}

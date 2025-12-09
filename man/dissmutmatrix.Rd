@@ -23,7 +23,7 @@ Color, in the posterior dissimilarity plot, is selected to visually identify hyp
 \code{dissmutmatrix()} returns a symmetric dissimilarity matrix in base 10.
 }
 \references{
-Hahsler M, Hornik K and Buchta C (2008), Getting things in order: An introduction to the R package seriation. Journal of Statistical Software 25/3. Software available at \url{http://www.jstatsoft.org/v25/i03/}.  
+Hahsler M, Hornik K and Buchta C (2008), Getting things in order: An introduction to the R package seriation. Journal of Statistical Software, 25(3), 1-34 \doi{10.18637/jss.v025.i03}.  
 
 Hahsler M and Hornik K. Dissimilarity plots: A visual exploration tool for partitional clustering. Journal of Computational and Graphical Statistics, 10(2):335--354, June 2011.
 }
@@ -32,7 +32,7 @@ David Lora
 }
 \seealso{
 \code{\link{dist}}, 
-\code{\link{dissplot}} 
+\code{\link[seriation]{dissplot}} 
 }
 \examples{
 require(seriation)
@@ -55,25 +55,27 @@ dissplot(mut.matrix,method=NA,
 
 
 ###Example 3:
-#data(PD4107a)
+\donttest{
+data(PD4107a)
 
 ###Visualizes a dissimilarity mutation matrix using seriation and matrix shading
 ###using the method developed by Hahsler and Hornik (2011).
 ###Chromosome 1;
-#mut.matrix <- dissmutmatrix(data=PD4107a,chr=Chr,position=Position,subset=1)
-#dissplot(mut.matrix, method=NA, options=list( col = 
-# c("black","navy","blue","cyan","green","yellow","orange","red",
-#	"darkred","darkred","white")))
+mut.matrix <- dissmutmatrix(data=PD4107a,chr=Chr,position=Position,subset=1)
+dissplot(mut.matrix, method=NA, options=list( col = 
+ c("black","navy","blue","cyan","green","yellow","orange","red",
+	"darkred","darkred","white")))
 
 ###Chromosome 6;
-#mut.matrix <- dissmutmatrix(data=PD4107a,chr=Chr,position=Position,subset=6)
-#dissplot(mut.matrix, method=NA, options=list( col = 
-# c("black","navy","blue","cyan","green","yellow","orange","red","darkred",
-#	"darkred","white")))
+mut.matrix <- dissmutmatrix(data=PD4107a,chr=Chr,position=Position,subset=6)
+dissplot(mut.matrix, method=NA, options=list( col = 
+ c("black","navy","blue","cyan","green","yellow","orange","red","darkred",
+	"darkred","white")))
 
 ###Chromosome 12;
-#mut.matrix <- dissmutmatrix(data=PD4107a,chr=Chr,position=Position,subset=12)
-#dissplot(mut.matrix, method=NA, options=list( col = 
-# c("black","navy","blue","cyan","green","yellow","orange","red","darkred",
-#   "darkred","white")))
+mut.matrix <- dissmutmatrix(data=PD4107a,chr=Chr,position=Position,subset=12)
+dissplot(mut.matrix, method=NA, options=list( col = 
+ c("black","navy","blue","cyan","green","yellow","orange","red","darkred",
+   "darkred","white")))
+}
 }

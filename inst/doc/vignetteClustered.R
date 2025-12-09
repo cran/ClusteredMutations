@@ -1,21 +1,21 @@
 ### R code from vignette source 'vignetteClustered.Rnw'
 
 ###################################################
-### code chunk number 1: vignetteClustered.Rnw:45-47
+### code chunk number 1: vignetteClustered.Rnw:46-48
 ###################################################
 library(ClusteredMutations)
 data(PD4107a)
 
 
 ###################################################
-### code chunk number 2: vignetteClustered.Rnw:50-52
+### code chunk number 2: vignetteClustered.Rnw:51-53
 ###################################################
 data.showers<-showers(data=PD4107a, chr=Chr, position=Position, min=2, max=10)
 head(data.showers, n=10)
 
 
 ###################################################
-### code chunk number 3: vignetteClustered.Rnw:57-82
+### code chunk number 3: vignetteClustered.Rnw:58-83
 ###################################################
 extra <- factor(c(),levels=c("T>C","T>G","T>A","C>T","C>G","C>A"))
 extra[PD4107a$Ref_base=="A" & PD4107a$Mutant_base=="G"]<-"T>C"
@@ -45,7 +45,7 @@ legend("topleft", legend = levels(rainfall$extra), col=c("yellow",
 
 
 ###################################################
-### code chunk number 4: vignetteClustered.Rnw:93-122
+### code chunk number 4: vignetteClustered.Rnw:94-123
 ###################################################
 set.seed(42)
 position<-c( c((runif(1001,min=1,max=10000001))),
@@ -79,26 +79,26 @@ lines(x = 100 * cos(theta) + 1050, y = sin(theta) + 1.5, col="red")
 
 
 ###################################################
-### code chunk number 5: vignetteClustered.Rnw:130-131
+### code chunk number 5: vignetteClustered.Rnw:131-132
 ###################################################
 showers(position=position)
 
 
 ###################################################
-### code chunk number 6: vignetteClustered.Rnw:134-135
+### code chunk number 6: vignetteClustered.Rnw:135-136
 ###################################################
 showers(data=PD4107a,chr=Chr,position=Position)
 
 
 ###################################################
-### code chunk number 7: vignetteClustered.Rnw:139-141
+### code chunk number 7: vignetteClustered.Rnw:140-142
 ###################################################
 example1<-c(1,101,201,299,301,306,307,317,318,320,418,518,528,628)
 10**(dissmutmatrix(position=example1,upper=TRUE))
 
 
 ###################################################
-### code chunk number 8: vignetteClustered.Rnw:155-160
+### code chunk number 8: vignetteClustered.Rnw:156-161
 ###################################################
 mut.matrix <- dissmutmatrix(data=PD4107a, chr=Chr,
 position=Position, subset=6)
